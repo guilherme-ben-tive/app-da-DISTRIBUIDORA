@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distribuidora Tropical - Cardápio</title>
+    <title>Distribuidora Tropical - Cardápio Digital</title>
     <style>
         :root {
             --primaria-mix: linear-gradient(135deg, #ff8c00, #e63946);
@@ -47,32 +47,36 @@
 
         .categoria-titulo {
             border-left: 5px solid #e63946;
-            padding-left: 10px;
+            padding-left: 12px;
             margin: 35px 0 15px 0;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             text-transform: uppercase;
+            font-weight: bold;
         }
 
         .produto-card {
             background: var(--branco);
-            border-radius: 12px;
-            margin-bottom: 15px;
+            border-radius: 15px;
+            margin-bottom: 18px;
             display: flex;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
             border: 1px solid var(--detalhe-laranja);
         }
 
         .produto-img {
-            width: 100px;
-            height: 100px;
+            width: 110px;
+            height: 110px;
             object-fit: cover;
-            background-color: #eee;
+            background-color: #f0f0f0;
         }
 
         .produto-info {
             padding: 12px;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .produto-nome {
@@ -84,19 +88,20 @@
         .produto-descricao {
             font-size: 0.85rem;
             color: #7a5c4f;
-            margin: 5px 0;
+            margin: 4px 0;
         }
 
         .produto-preco {
             color: var(--preco-vermelho);
             font-weight: bold;
+            font-size: 1.1rem;
         }
 
         footer {
             text-align: center;
             padding: 40px;
             font-size: 0.8rem;
-            opacity: 0.7;
+            opacity: 0.8;
         }
     </style>
 </head>
@@ -105,66 +110,110 @@
     <header>
         <div class="nome-topo-direito">DISTRIBUIDORA TROPICAL</div>
         <h1>Cardápio Tropical</h1>
-        <p>O frescor que você procura!</p>
+        <p>Qualidade e sabor no seu dia!</p>
     </header>
 
     <main class="container" id="menu-container">
         </main>
 
     <footer>
-        <p>&copy; 2026 Distribuidora Tropical</p>
+        <p>&copy; 2026 Distribuidora Tropical - Todos os direitos reservados</p>
     </footer>
 
     <script>
-        // Dados dos produtos organizados por categoria
+        // LISTA COMPLETA DE PRODUTOS, PREÇOS E FOTOS
         const cardapio = {
             "Whiskys": [
-                { nome: "Red Label", preco: "R$ 0,00", desc: "Whisky escocês clássico.", img: "img/red-label.jpg" },
-                { nome: "Jack Daniel's", preco: "R$ 0,00", desc: "O autêntico Tennessee Whisky.", img: "img/jack.jpg" },
-                { nome: "Jack Daniel's Maçã", preco: "R$ 0,00", desc: "Jack Apple, leve e refrescante.", img: "img/jack-apple.jpg" },
-                { nome: "Jack Fire", preco: "R$ 0,00", desc: "Intenso sabor de canela.", img: "img/jack-fire.jpg" },
-                { nome: "Passport", preco: "R$ 0,00", desc: "Whisky suave e equilibrado.", img: "img/passport.jpg" }
+                { 
+                    nome: "Johnnie Walker Red Label", 
+                    preco: "R$ 119,90", 
+                    desc: "Whisky escocês intenso e defumado, ideal para misturas.", 
+                    img: "https://images.unsplash.com/photo-1599599810694-b5b37304c041?q=80&w=400" 
+                },
+                { 
+                    nome: "Jack Daniel's Old No. 7", 
+                    preco: "R$ 149,00", 
+                    desc: "Suavizado em carvão de bordo, o clássico sabor do Tennessee.", 
+                    img: "https://images.unsplash.com/photo-1527281473222-793929902640?q=80&w=400" 
+                },
+                { 
+                    nome: "Jack Daniel's Apple", 
+                    preco: "R$ 155,00", 
+                    desc: "O caráter do Jack Daniel's com o frescor da maçã verde.", 
+                    img: "https://images.unsplash.com/photo-1614313511387-1436a4480ebb?q=80&w=400" 
+                },
+                { 
+                    nome: "Jack Daniel's Fire", 
+                    preco: "R$ 155,00", 
+                    desc: "Blend picante de licor de canela com o clássico Jack Daniel's.", 
+                    img: "https://images.unsplash.com/photo-1516997121675-4c2d1684aa3e?q=80&w=400" 
+                },
+                { 
+                    nome: "Passport Scotch", 
+                    preco: "R$ 69,90", 
+                    desc: "Whisky escocês suave, levemente frutado e cremoso.", 
+                    img: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=400" 
+                }
             ],
-            "Cervejas": [
-                { nome: "Cerveja Lata", preco: "R$ 0,00", desc: "Gelada 350ml", img: "img/cerveja.jpg" }
+            "Cervejas e Bebidas": [
+                { 
+                    nome: "Cerveja Lata", 
+                    preco: "R$ 5,50", 
+                    desc: "Cerveja pilsen 350ml, servida estupidamente gelada.", 
+                    img: "https://images.unsplash.com/photo-1584225065152-4a1454aa3d4e?q=80&w=400" 
+                },
+                { 
+                    nome: "Suco Natural", 
+                    preco: "R$ 10,00", 
+                    desc: "Suco de laranja 500ml, feito na hora sem conservantes.", 
+                    img: "https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=400" 
+                }
             ],
-            "Bebidas Quentes": [
-                { nome: "Café Expresso", preco: "R$ 0,00", desc: "Forte e aromático", img: "img/cafe.jpg" }
-            ],
-            "Salgadinhos": [
-                { nome: "Coxinha", preco: "R$ 0,00", desc: "Frango com requeijão", img: "img/coxinha.jpg" }
-            ],
-            "Sucos e Doces": [
-                { nome: "Suco Laranja", preco: "R$ 0,00", desc: "Natural 500ml", img: "img/suco.jpg" },
-                { nome: "Brigadeiro", preco: "R$ 0,00", desc: "Chocolate artesanal", img: "img/doce.jpg" }
+            "Petiscos e Doces": [
+                { 
+                    nome: "Coxinha Especial", 
+                    preco: "R$ 7,50", 
+                    desc: "Frango com catupiry, massa de batata crocante e sequinha.", 
+                    img: "https://images.unsplash.com/photo-1626074353765-517a681e40be?q=80&w=400" 
+                },
+                { 
+                    nome: "Fatia de Pudim", 
+                    preco: "R$ 8,00", 
+                    desc: "Pudim de leite condensado artesanal com calda de caramelo.", 
+                    img: "https://images.unsplash.com/photo-1541783245831-57d6fb0926d3?q=80&w=400" 
+                }
             ]
         };
 
         function carregarCardapio() {
             const container = document.getElementById('menu-container');
-            
-            for (let categoria in cardapio) {
-                const titulo = document.createElement('h2');
-                titulo.className = 'categoria-titulo';
-                titulo.innerText = categoria;
-                container.appendChild(titulo);
+            container.innerHTML = ""; 
 
+            for (let categoria in cardapio) {
+                // Adiciona o Título da Categoria
+                const h2 = document.createElement('h2');
+                h2.className = 'categoria-titulo';
+                h2.innerText = categoria;
+                container.appendChild(h2);
+
+                // Adiciona os Produtos
                 cardapio[categoria].forEach(item => {
-                    const html = `
-                        <div class="produto-card">
-                            <img src="${item.img}" class="produto-img" alt="${item.nome}" onerror="this.src='https://via.placeholder.com/100?text=Tropical'">
-                            <div class="produto-info">
-                                <p class="produto-nome">${item.nome}</p>
-                                <p class="produto-descricao">${item.desc}</p>
-                                <p class="produto-preco">${item.preco}</p>
-                            </div>
+                    const div = document.createElement('div');
+                    div.className = 'produto-card';
+                    div.innerHTML = `
+                        <img src="${item.img}" class="produto-img" alt="${item.nome}" onerror="this.src='https://via.placeholder.com/110?text=Tropical'">
+                        <div class="produto-info">
+                            <p class="produto-nome">${item.nome}</p>
+                            <p class="produto-descricao">${item.desc}</p>
+                            <p class="produto-preco">${item.preco}</p>
                         </div>
                     `;
-                    container.innerHTML += html;
+                    container.appendChild(div);
                 });
             }
         }
 
+        // Inicia o app
         window.onload = carregarCardapio;
     </script>
 </body>
