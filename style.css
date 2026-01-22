@@ -1,0 +1,93 @@
+:root {
+    --primaria-mix: linear-gradient(135deg, #ff8c00, #e63946);
+    --texto-marrom: #4b2c20;
+    --fundo-claro: #fffaf0;
+    --branco: #ffffff;
+    --detalhe-laranja: #ffe0b2;
+    --preco-vermelho: #d32f2f;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--fundo-claro);
+    margin: 0;
+    color: var(--texto-marrom);
+}
+
+header {
+    background: var(--primaria-mix);
+    color: var(--branco);
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nome-topo-direito {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.categoria-titulo {
+    border-left: 5px solid #e63946;
+    padding-left: 10px;
+    margin: 30px 0 15px 0;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: var(--texto-marrom);
+}
+
+.produto-card {
+    background: var(--branco);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid var(--detalhe-laranja);
+}
+
+.produto-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.produto-info {
+    padding: 12px;
+    flex: 1;
+}
+
+.produto-nome {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.produto-descricao {
+    font-size: 0.85rem;
+    color: #7a5c4f;
+    margin: 5px 0;
+}
+
+.produto-preco {
+    color: var(--preco-vermelho);
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
